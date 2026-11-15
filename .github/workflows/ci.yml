@@ -1,0 +1,7 @@
+name: ci
+on: pull_request
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "event=${{ github.event.action }} base=${{ github.event.pull_request.base.sha }} head=${{ github.event.pull_request.head.sha }} sha=${{ github.sha }} actor=${{ github.actor }}"
